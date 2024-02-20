@@ -4,7 +4,7 @@
 #include "B.hpp"
 #include "C.hpp"
 #include <ctime>
-
+#include <stdint.h>
 Base *generate(void);
 void identify(Base *p);
 void identify(Base &p);
@@ -73,10 +73,6 @@ void identify(Base &p)
     std::cout << "A" << std::endl;
     (void)a;
   }
-  catch (const std::bad_cast &badCast)
-  {
-    std::cerr << "Caught std:: A   bad_cast: " << badCast.what() << std::endl;
-  }
   catch (const std::exception &otherException)
   {
     std::cerr << "Caught std::exception: " << otherException.what() << std::endl;
@@ -88,10 +84,6 @@ void identify(Base &p)
     std::cout << "B" << std::endl;
     (void)b;
   }
-  catch (const std::bad_cast &badCast)
-  {
-    std::cerr << "Caught std:: B   bad_cast: " << badCast.what() << std::endl;
-  }
   catch (const std::exception &otherException)
   {
     std::cerr << "Caught std::exception: " << otherException.what() << std::endl;
@@ -102,10 +94,6 @@ void identify(Base &p)
     C &c = dynamic_cast<C &>(p);
     std::cout << "C" << std::endl;
     (void)c;
-  }
-  catch (const std::bad_cast &badCast)
-  {
-    std::cerr << "Caught std::C   bad_cast: " << badCast.what() << std::endl;
   }
   catch (const std::exception &otherException)
   {
