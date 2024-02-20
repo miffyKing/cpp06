@@ -1,7 +1,8 @@
 #include <iostream>
 #include "Serializer.hpp"
 #include "Data.hpp"
-// #include <cstdint>
+#include <cstdint>
+
 Data sample;
 
 int main()
